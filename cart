@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.cart {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin: 10px 0;
+}
+
+#checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+#checkout-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+</style>
+<a href="home page.html" class="btn">HOME</a>
+<body>
+
+    <h1>MENU</h1>
+    <form action="payment.html" cart 2 form onsubmit="return validateForm()">
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="pakora.jpg" height="200px" width=""200px>
+            <h3>Pakora</h3>
+            <p>100/-</p>
+            <button class="add-to-cart" data-id="1" data-name="pakora" data-price="100.00">
+                Add to Cart
+            </button>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="vindaloo.jpg" alt="Product 2" height="200px" width=""200px>
+            <h3>Vindaloo</h3>
+            <p>100/-</p>
+            <button class="add-to-cart" data-id="2" data-name="vindaloo" data-price="100.00">
+                Add to Cart
+            </button>
+        </div>
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="vada pav.jpg" alt="Product 3" height="200px" width=""200px>
+            <h3>Vada pav</h3>
+            <p>100/-</p>
+            <button class="add-to-cart" data-id="3" data-name="vada pav" data-price="100.00">
+                Add to Cart
+            </button>
+        </div>
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="shahi paneer.jpg" alt="Product 4" height="200px" width=""200px>
+            <h3>Shahi paneer</h3>
+            <p>100/-</p>
+            <button class="add-to-cart" data-id="4" data-name="shahi paneer" data-price="100.00">
+                Add to Cart
+            </button>
+        </div>
+        <!-- Product 5 -->
+        <div class="product">
+            <img src="samosa.jpg" alt="Product 5 "height="200px" width=""200px>
+            <h3>Samosa</h3>
+            <p>150/-</p>
+            <button class="add-to-cart" data-id="1" data-name="samosa" data-price="150.00">
+                Add to Cart
+            </button>
+        </div>
+        <!-- Product 6 -->
+        <div class="product">
+            <img src="rogan josh.jpg" alt="Product 6 " height="200px" width=""200px>
+            <h3>Rogan Josh</h3>
+            <p>150/-</p>
+            <button class="add-to-cart" data-id="1" data-name="ragon josh" data-price="150.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product">
+            <img src="ras malai.jpg" alt="Product 7" height="200px" width=""200px>
+            <h3>Ras malai</h3>
+            <p>150/-</p>
+            <button class="add-to-cart" data-id="1" data-name="ras malai" data-price="150.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product">
+            <img src="paratha.jpg" alt="Product 8">
+            <h3>Paratha</h3>
+            <p>150/-</p>
+            <button class="add-to-cart" data-id="1" data-name="paratha" data-price="150.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="product">
+            <img src="sambar.jpg" alt="Product 9" height="200px" width=""200px>
+            <h3>Sambar</h3>
+            <p>200/-</p>
+            <button class="add-to-cart" data-id="1" data-name="sambar" data-price="200.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="product">
+            <img src="naan.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Naan</h3>
+            <p>200/-</p>
+            <button class="add-to-cart" data-id="1" data-name="naan" data-price="200.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 11 -->
+        <div class="product">
+            <img src="idli.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Idli</h3>
+            <p>200/-</p>
+            <button class="add-to-cart" data-id="1" data-name="idli" data-price="200.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="product">
+            <img src="malabar fish curry.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Malabar Fish Curry</h3>
+            <p>200/-</p>
+            <button class="add-to-cart" data-id="1" data-name="malabar fish curry" data-price="200.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 13 -->
+        <div class="product">
+            <img src="dal makani.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Dal MAkhani</h3>
+            <p>250/-</p>
+            <button class="add-to-cart" data-id="1" data-name="dal makhani" data-price="250.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 14 -->
+        <div class="product">
+            <img src="aloo gobi.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Aloo Gobi</h3>
+            <p>250/-</p>
+            <button class="add-to-cart" data-id="1" data-name="aloo gobi" data-price="250.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 15 -->
+        <div class="product">
+            <img src="dal tadka.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Dal Tadka</h3>
+            <p>250/-</p>
+            <button class="add-to-cart" data-id="1" data-name="" data-name="dal tadka" data-price="250.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 16 -->
+        <div class="product">
+            <img src="barfi.jpg" alt="Product 1">
+            <h3>Barfi</h3>
+            <p>250/-</p>
+            <button class="add-to-cart" data-id="1" data-name="barfi" data-price="250.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 17 -->
+        <div class="product">
+            <img src="biryani.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Biryani</h3>
+            <p>300/-</p>
+            <button class="add-to-cart" data-id="1" data-name="biryani" data-price="300.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 18-->
+        <div class="product">
+            <img src="butter chicken.jpg" alt="Product 1">
+            <h3>Butter Chicken</h3>
+            <p>300/-</p>
+            <button class="add-to-cart" data-id="1" data-name="butter chicken" data-price="300.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 19 -->
+        <div class="product">
+            <img src="chaat.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Chaat</h3>
+            <p>300/-</p>
+            <button class="add-to-cart" data-id="1" data-name="chaat" data-price="300.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 20 -->
+        <div class="product">
+            <img src="chana masala.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Chana Masala</h3>
+            <p>300/-</p>
+            <button class="add-to-cart" data-id="1" data-name="chana masaala" data-price="300.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 21 -->
+        <div class="product">
+            <img src="gulab jamun.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Gulab Jamun</h3>
+            <p>350/-</p>
+            <button class="add-to-cart" data-id="1" data-name="gulab jamun" data-price="350.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 22 -->
+        <div class="product">
+            <img src="kulfi.jpg" alt="Product 1" height="200px" width=""200px>
+            <h3>Kulfi</h3>
+            <p>350/-</p>
+            <button class="add-to-cart" data-id="1" data-name="kulfi" data-price="350.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 23 -->
+        <div class="product">
+            <img src="lassi.jpg" alt="Product 1" height="200px" width=""200px>
+         <h3>Lassi</h3>
+            <p>350/-</p>
+            <button class="add-to-cart" data-id="1" data-name="lassi" data-price="350.00">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Product 24-->
+        <div class="product">
+            <img src="p-3.jpeg" alt="Product 1"height="200px" width=""200px>
+            <h3>Laksa Shirataki</h3>
+            <p>500/-</p>
+            <button class="add-to-cart" data-id="1" data-name="laksa Shirataki" data-price="500/-">
+                Add to Cart
+            </button>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        
+        </div>
+        </form>
+
+    </div>
+
+
+    <!-- Cart Section -->
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will appear here -->
+        </ul>
+        <p>Total: <span id="total-price">0.00/-</span></p>
+        <button id="checkout-btn" disabled>Proceed to Checkout</button>
+    </div>
+
+    <script>
+        // script.js
+
+        function resetCart() {
+            document.getElementById('cart-items').innerHTML = '';
+        }
+
+// Update cart and total price
+function updateCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsList = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+    const checkoutButton = document.getElementById('checkout-btn');
+
+    // Clear previous cart items
+    cartItemsList.innerHTML = '';
+
+    // Calculate total price
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.name} - ${item.price}`;
+        cartItemsList.appendChild(listItem);
+        totalPrice += parseFloat(item.price);
+    });
+
+    // Update the total price
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+
+    // Enable checkout button if there are items in the cart
+    checkoutButton.disabled = cart.length === 0;
+}
+
+// Add product to cart
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const id = button.getAttribute('data-id');
+        const name = button.getAttribute('data-name');
+        const price = button.getAttribute('data-price');
+
+        // Get current cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the new item to the cart
+        cart.push({ id, name, price });
+
+        // Save updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update the cart display
+        updateCart();
+    });
+});
+
+// Initialize cart when the page loads
+updateCart();
+function removeFromCart(name) {
+    cart = cart.filter(product => product.name !== name);
+    updateCart();
+}
+
+
+    </script>
+    
+</body>
+</html>

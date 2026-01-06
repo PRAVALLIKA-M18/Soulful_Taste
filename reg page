@@ -1,0 +1,76 @@
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<style>
+  div{
+      color: rgb(236, 244, 246);
+      text-align:left;
+    }
+    
+body {
+    img {
+  border: 1px solid #080808;
+  border-radius: 20px;
+  padding: 290px;
+  width: 50px;
+}
+background-image: URL("register\ bckg.jpeg");
+background-size: cover;
+}
+</style>
+<a href="home page.html" class="btn">HOME</a>
+<body>
+  <div>
+  <h1>REGISTER HERE</h1>
+  <form action="login page.html" registrationForm onsubmit="return validateForm()">
+   <h2>Name:<input type="text" id="username" name="username" ></h2>
+   <h2>Mobile no:<input type="text" id="username" name="username" ></h2>
+   <h2>Email id:<input type="text" id="username" name="username" ></h2>
+   <h2>Password:<input type="text" id="username" name="username" ></h2>
+   <h2>conform password:<input type="text" id="username" name="username" ></h2>
+    <input type="submit" value="Register">
+  </div>
+  </form>
+
+  <script>
+
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Check if passwords match
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+
+      // Validate other fields (you can add more validation as needed)
+      if (username.length < 4 || username.length > 20) {
+        alert("Username must be between 4 and 20 characters");
+        return false;
+      }
+
+      if (!validateEmail(email)) {
+        alert("Invalid email format");
+        return false;
+      }
+
+      return true;
+    }
+
+    function validateEmail(email) {
+      // A simple email validation regular expression
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    }
+  </script>
+</body>
+
+    
+           
+    
+            
+</html>

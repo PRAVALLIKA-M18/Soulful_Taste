@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<style>
+  div{
+      color: rgb(236, 244, 246);
+      text-align:center;
+    }
+    
+body {
+    img {
+  border: 1px solid #080808;
+  border-radius: 20px;
+  padding: 290px;
+  width: 50px;
+}
+background-image: URL("contact.png");
+background-size: cover;
+}
+</style>
+<a href="home page.html" class="btn">HOME</a>
+<body>
+  <div>
+    <h1>CONTACT US</h1>
+  <form action="home page.html" home Form onsubmit="return validateForm()">
+   <h2>Name:<input type="text" id="username" name="username" ></h2>
+   <h2>Mobile no:<input type="text" id="username" name="username" ></h2>
+   <h2>Email id:<input type="text" id="username" name="username" ></h2>
+   <label for="message">Message</label>
+   <textarea id="message" name="message" placeholder="Write something..." style="height:20px" required></textarea>
+    <input type="submit" value="submit">
+
+  </form>
+</div>
+</body>
+</html>
+  
+  

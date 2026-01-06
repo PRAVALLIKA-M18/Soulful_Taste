@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>JavaScript functions</title>
+</head>
+<style>
+    div{
+      color: rgb(220, 225, 226);
+      text-align:center;
+    }
+    
+body {
+    img {
+  border: 1px solid #ddd;
+  border-radius: 40px;
+  padding: 290px;
+  width: 150px;
+}
+background-image: URL("login.jpg");
+background-size: cover;
+}
+</style>
+
+
+<a href="home page.html" class="btn">HOME</a>
+
+    <script>
+        
+         function loginValidation()
+         {
+            
+            var uname = document.myform.username.value;
+        
+            var password = document.myform.password.value;
+            if(uname==null || uname=="")
+         {
+        alert("Name can't be blank")
+        return false;
+         }
+         else if ("password.length<6")
+         {
+            alert("password must be 6 letters")
+            return false;
+         }
+         return true;
+        }
+ </script>
+  
+<body>
+
+
+<div>
+    <h2>LOGIN HERE</h2>
+
+    
+    <form action="cart 2.html" login form onsubmit="return validateForm()">
+USERNAME:<input type="text" name="username"> <br>
+
+PASSWORD:<input type="password" name="password"> <br>
+         <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        
+ 
+</div>
+</form>
+</body>
+    
+</html>
